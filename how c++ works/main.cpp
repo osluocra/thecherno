@@ -12,4 +12,4 @@ int main(){
     
     log("Hello World!");
     return 0;
-}
+#include "closeBracket.cpp"

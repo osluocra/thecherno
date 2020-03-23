@@ -1,6 +1,8 @@
 /****
-  The Cherno video #28
-  https://www.youtube.com/watch?v=oIV2KchSyGQ&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=28
+  * The Cherno 
+  * video #28 Virtual Functions
+    https://www.youtube.com/watch?v=oIV2KchSyGQ&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=28
+  * video #29 - Pure virtual functions
 */
 
 #include <iostream>
@@ -9,12 +11,13 @@
 using namespace std;
 
 
-
 class Entity{
     public:
         virtual string getName(){
             return "Entity";
         }
+        
+        virtual string getNamePure()=0;
 };
 
 
@@ -31,6 +34,10 @@ class Player: public Entity{
             return m_Name;
         }
 
+        string getNamePure() override{
+            return m_Name;
+        }
+
 };
 
 void printName(Entity* entity){
@@ -38,7 +45,7 @@ void printName(Entity* entity){
 }
 
 int main(){
-    Entity* e = new Entity();
+    Entity* e = new Player("Juany");
     printName(e);
 
     Player* p = new Player("Oscar");

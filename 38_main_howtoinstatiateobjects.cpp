@@ -14,9 +14,13 @@ class Entity{
     private:
         String m_name;
     public:
-        Entity() : m_name("Unkown"){};
+        Entity() : m_name("Unkown"){
+            std::cout << "Calling default constructor: " << m_name << std::endl;
+        };
 
-        Entity(const String& p_name) : m_name(p_name){};
+        Entity(const String& p_name) : m_name(p_name){
+            std::cout << "Calling constructor with name:" << m_name << std::endl;
+        };
 
         const String& getName() const{
             return m_name;
@@ -62,7 +66,7 @@ int main(){
     Entity* hp;
     {
         
-        Entity* ph_e1 =  new Entity("Oscar");
+        Entity* ph_e1 =  new Entity("New Oscar");
         hp=ph_e1;
 
         std::cout << "hp:" << hp->getName() << std::endl;
